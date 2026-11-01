@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+  </head>
+
+  <body>
+    <app-bar
+      app-title="Notes App"
+      tagline="Catatan berbasis Web App."
+    ></app-bar>
+
+    <main class="page-container">
+      <section class="intro-section">
+        <div>
+          <h1 class="eyebrow">WEB APP NOTES</h1>
+        </div>
+
+        <div class="note-total" aria-live="polite">
+          <span class="note-total__number" id="note-count">0</span>
+          <span class="note-total__label">catatan</span>
+        </div>
+      </section>
+
+      <div id="loading-indicator" class="loading-indicator" hidden>
+        <span class="loading-indicator__spinner" aria-hidden="true"></span>
+        <span>Sedang memuat data...</span>
+      </div>
+
+      <p id="error-message" class="error-message" role="alert" hidden></p>
+
+      <div class="workspace">
+        <section class="form-panel">
+          <div class="section-heading">
+            <span class="section-icon" aria-hidden="true">🔖</span>
+
+            <div>
+              <h2>Buat catatan baru</h2>
+            </div>
+          </div>
+          <note-form min-title-length="3" min-body-length="5"></note-form>
+        </section>
+
+        <section class="notes-section">
+          <div class="notes-section__header">
+            <div>
+              <p class="eyebrow">KOLEKSI</p>
+              <h2>Daftar catatan</h2>
+            </div>
+
+            <span class="notes-section__caption">
+              Catatan terbaru paling atas
+            </span>
+          </div>
+          <div id="notes-list" class="notes-grid" aria-live="polite"></div>
+
+          <p id="empty-state" class="empty-state" hidden>
+            Belum ada catatan!
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <p>
+        Web App Notes
+        <span aria-hidden="true">·</span>
+        &copy; Rizki Mulyawan
+      </p>
+    </footer>
+  </body>
+</html>
